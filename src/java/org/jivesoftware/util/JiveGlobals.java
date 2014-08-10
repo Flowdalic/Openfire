@@ -779,6 +779,7 @@ public class JiveGlobals {
         if (isSetupMode()) {
             return;
         }
+        loadOpenfireProperties();
         openfireProperties.migrateProperty(name);
     }
     
