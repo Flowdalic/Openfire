@@ -862,6 +862,9 @@ public class JiveGlobals {
      * set the algorithm for encrypting property values 
      */
     public static void setupPropertyEncryptionAlgorithm(String alg) {
+        if (securityProperties == null) {
+            loadSecurityProperties();
+        }
     	if (ENCRYPTION_ALGORITHM_AES.equalsIgnoreCase(alg)) {
     		securityProperties.setProperty(ENCRYPTION_ALGORITHM, ENCRYPTION_ALGORITHM_AES);
     	} else {
